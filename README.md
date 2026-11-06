@@ -1,5 +1,5 @@
 # Parcours AI/ML Engineering
-
+ 
 Mon parcours d'apprentissage pour devenir capable de préparer des données, développer et évaluer des modèles de Machine Learning, construire des applications d'IA générative et mettre ces solutions en production.
 
 **Progression :** Python et données → Machine Learning → Deep Learning et NLP → LLM et applications IA → automatisation → déploiement et MLOps.
