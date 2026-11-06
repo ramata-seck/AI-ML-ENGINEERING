@@ -1,0 +1,8 @@
+categorie,synonymes,prix_min_indicatif,prix_max_indicatif,surface_min_typique,surface_max_typique
+Appartement,appart|appartement|appt,25000000,120000000,45,180
+Studio,studio,12000000,45000000,20,60
+Chambre,chambre|chambre simple,5000000,18000000,10,30
+Villa,villa,80000000,450000000,120,450
+Maison,maison,35000000,180000000,60,250
+Terrain,terrain|terrains,8000000,90000000,80,1500
+Local commercial,local|local commercial|bureau|magasin,30000000,200000000,40,300

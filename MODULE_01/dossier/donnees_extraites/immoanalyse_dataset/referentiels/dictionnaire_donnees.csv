@@ -1,0 +1,10 @@
+champ,type_attendu,sens,contraintes,limites
+ref_plateforme,text,Identifiant local plateforme,unique dans la source,aucune
+date_mise_en_ligne,date,Date de mise en ligne,ISO ou JJ/MM/AAAA,peut être future (erreur)
+type_transaction,catégorie,vente ou location,2 valeurs,aucune
+categorie,catégorie,Type de bien,7 valeurs + synonymes,normalisable
+region,catégorie,Région administrative,14 régions,cohérence avec ville
+commune,catégorie,Ville/commune,référentiel,cohérence avec région
+prix,numérique ou texte,Prix demandé ou loyer,FCFA,"peut être nul, négatif, textuel"
+surface,numérique ou texte,Surface en m²,strictement positive,peut être textuelle
+statut,catégorie,Statut de l'annonce,Vendu/En vente/...,casse variable

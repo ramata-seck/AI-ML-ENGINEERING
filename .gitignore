@@ -2,6 +2,22 @@
 venv/
 .venv/
 env/
+# Environnements Python
+.venv/
+venv/
+
+# Caches Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Caches Jupyter
+.ipynb_checkpoints/
+
+# Fichiers temporaires
+.~lock.*
+.Rhistory
+
 
 # Secrets (ne jamais publier !)
 .env

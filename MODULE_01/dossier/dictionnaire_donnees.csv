@@ -1,0 +1,56 @@
+source,champ,chemin_json,type_attendu,obligatoire,valeurs_autorisees,unite,description,pieges_frequents,regle_associee,traitement_attendu
+plateforme_immo_sn.csv,ref_plateforme,,texte,oui,"PLT-XXXXX (5 chiffres)",,Identifiant local à la plateforme. Non universel.,"Peut être dupliqué si ligne recopiée; ne pas confondre avec id_bien",RM-01,conserver
+plateforme_immo_sn.csv,date_mise_en_ligne,,date,oui,"ISO YYYY-MM-DD ou JJ/MM/AAAA",,Date de publication de l'annonce.,"Peut être future (erreur); peut être vide",RM-05,quarantaine si impossible ou future
+plateforme_immo_sn.csv,type_transaction,,catégorie,oui,"vente, location",,Nature de l'opération. Détermine l'interprétation de prix et devise.,"Peut être absent ou en casse variable",RM-02,normaliser
+plateforme_immo_sn.csv,categorie,,catégorie,oui,"Appartement, Studio, Chambre, Villa, Maison, Terrain, Local commercial",,Type de bien.,"Synonymes (appart, appt); casse variable",RM-08,normaliser via référentiel
+plateforme_immo_sn.csv,region,,catégorie,oui,14 régions du référentiel,,Région administrative.,"Casse variable (DAKAR, dakar)",RM-07,normaliser
+plateforme_immo_sn.csv,commune,,catégorie,oui,Villes du référentiel,,Ville ou commune.,"Incohérence avec region; variantes d'accents",RM-07,signaler si incohérent
+plateforme_immo_sn.csv,quartier,,texte,non,libre,,Quartier ou zone. Non normalisé.,"Champ libre; utile pour rapprochement uniquement",,conserver
+plateforme_immo_sn.csv,prix,,décimal ou texte,oui,"> 0",FCFA,Prix demandé (vente) ou loyer (location).,"""37 965 000 FCFA"", ""58.29 millions"", ""à négocier"", 0, négatif, espace comme séparateur",RM-03,"normaliser si fiable, sinon quarantaine"
+plateforme_immo_sn.csv,devise,,catégorie,oui,"FCFA, FCFA/mois",,Unité monétaire.,"Peut être incohérente avec type_transaction",RM-02,signaler si incohérent
+plateforme_immo_sn.csv,surface,,décimal ou texte,oui,"> 0",m²,Surface en m².,"Virgule décimale (""53,0""); 0; négatif; ""1,250"" ambigu; vide",RM-04,"normaliser si fiable, sinon quarantaine"
+plateforme_immo_sn.csv,pieces,,entier,non,">= 0",,Nombre de pièces principales.,"0 pour terrains; incohérent si > 10 pour studio",RM-09,signaler si incohérent
+plateforme_immo_sn.csv,sdb,,entier,non,">= 0",,Nombre de salles de bain.,"0 pour terrains et chambres; incohérent si > chambres+2",RM-09,signaler si incohérent
+plateforme_immo_sn.csv,description,,texte,non,libre,,Description libre de l'annonce.,"Parfois vide; contient adresse, étage, équipements",,conserver
+plateforme_immo_sn.csv,statut,,catégorie,oui,"Vendu, En vente, Sous offre, Retiré, Disponible, Loué",,Statut de l'annonce.,"Casse variable (VENDU, vendu)",RM-10,normaliser
+plateforme_immo_sn.csv,date_expiration,,date,oui,ISO YYYY-MM-DD,,Date d'expiration de l'annonce.,"Doit être >= date_mise_en_ligne; peut être absente",RM-05,signaler si antérieure
+agence_teranga.xlsx,Code,,texte,oui,"AGT-XXXXX (5 chiffres)",,Identifiant local à l'agence. Non universel.,"Peut être dupliqué en cas de recopie",RM-01,conserver
+agence_teranga.xlsx,Date,,date,oui,ISO ou JJ/MM/AAAA,,Date de l'annonce.,"Mélange ISO et français dans la même colonne",RM-05,"normaliser, quarantaine si impossible"
+agence_teranga.xlsx,Region,,catégorie,oui,14 régions du référentiel,,Région administrative.,"Casse variable",RM-07,normaliser
+agence_teranga.xlsx,Ville,,catégorie,oui,Villes du référentiel,,Ville.,"Incohérence possible avec Region; casse variable",RM-07,signaler si incohérent
+agence_teranga.xlsx,Type,,catégorie,oui,7 types du référentiel,,Type de bien.,"Synonymes; casse variable",RM-08,normaliser via référentiel
+agence_teranga.xlsx,Prix_FCFA,,décimal,oui,"> 0",FCFA,Prix ou loyer en FCFA.,"0; négatif; ne distingue pas ventes et locations",RM-03,"normaliser, sinon quarantaine"
+agence_teranga.xlsx,Surface_m2,,décimal,oui,"> 0",m²,Surface en m².,"0; négatif; vide; peut être en texte",RM-04,"normaliser, sinon quarantaine"
+agence_teranga.xlsx,Chambres,,entier,non,">= 0",,Nombre de chambres.,"0 pour terrains; incohérent pour certains types",RM-09,signaler si incohérent
+agence_teranga.xlsx,SDB,,entier,non,">= 0",,Nombre de salles de bain.,"0 pour terrains et chambres",RM-09,signaler si incohérent
+agence_teranga.xlsx,Statut,,catégorie,oui,"Vendu, En vente, Disponible, Loué",,Statut de l'annonce.,"Casse variable (VENDU)",RM-10,normaliser
+agence_teranga.xlsx,Commercial,,texte,oui,libre,,Nom du commercial.,"Toujours Agence Teranga dans le pack",,conserver
+particuliers.json,annonce.id,annonce.id,texte,oui,"PRT-XXXXX (5 chiffres)",,Identifiant local. Non universel.,"Peut être dupliqué",RM-01,conserver
+particuliers.json,annonce.date,annonce.date,date,oui,ISO ou JJ/MM/AAAA,,Date de l'annonce.,"Peut être ""hier"" ou null",RM-05,quarantaine si impossible
+particuliers.json,annonce.localisation.region,annonce.localisation.region,catégorie,oui,14 régions du référentiel,,Région.,"Peut être null; incohérence avec ville",RM-07,"signaler si null ou incohérent, ne pas imputer"
+particuliers.json,annonce.localisation.ville,annonce.localisation.ville,catégorie,oui,Villes du référentiel,,Ville.,"Peut être null; incohérence avec region",RM-07,"signaler si null ou incohérent, ne pas imputer"
+particuliers.json,annonce.details.type,annonce.details.type,catégorie,oui,7 types du référentiel,,Type de bien.,"Synonymes; casse variable",RM-08,normaliser via référentiel
+particuliers.json,annonce.details.transaction,annonce.details.transaction,catégorie,conditionnel,"vente, location",,Nature de l'opération.,"Peut être absent; à défaut, déduire de prix et statut",RM-02,normaliser ou signaler
+particuliers.json,annonce.details.prix,annonce.details.prix,décimal ou texte,oui,"> 0",FCFA,Prix ou loyer.,"null; ""à négocier""; ""58.29 millions""; 0; négatif",RM-03,"normaliser si fiable, sinon quarantaine"
+particuliers.json,annonce.details.surface,annonce.details.surface,décimal ou texte,oui,"> 0",m²,Surface en m².,"null; ""quatre-vingt""; virgule décimale",RM-04,"normaliser si fiable, sinon quarantaine"
+particuliers.json,annonce.details.chambres,annonce.details.chambres,entier,non,">= 0",,Nombre de chambres.,"null; 0; incohérent pour certains types",RM-09,signaler si incohérent
+particuliers.json,annonce.details.sdb,annonce.details.sdb,entier,non,">= 0",,Nombre de salles de bain.,"null; 0",RM-09,signaler si incohérent
+particuliers.json,annonce.statut,annonce.statut,catégorie,oui,"Vendu, En vente, Disponible, Loué, À confirmer",,Statut de l'annonce.,"Casse variable; ""À confirmer"" à conserver",RM-10,normaliser
+notaires.csv,id_acte,,texte,oui,"NOT-XXXXX (5 chiffres)",,Identifiant de l'acte. Non universel.,"Peut être dupliqué",RM-01,conserver
+notaires.csv,date_acte,,date,oui,ISO YYYY-MM-DD,,Date de signature.,"Peut être 32/13/2024 (impossible); peut être vide",RM-05,quarantaine si impossible
+notaires.csv,region,,catégorie,oui,14 régions du référentiel,,Région.,"Rarement incohérent",RM-07,normaliser
+notaires.csv,ville,,catégorie,oui,Villes du référentiel,,Ville.,"Cohérente avec region dans la majorité des cas",RM-07,signaler si incohérent
+notaires.csv,type_bien,,catégorie,oui,7 types du référentiel,,Type de bien.,"Généralement propre; casse variable",RM-08,normaliser
+notaires.csv,montant_fcfa,,décimal,conditionnel,"> 0",FCFA,Montant de la transaction (vente uniquement).,"null; ne pas confondre avec 0",RM-03,signaler si null
+notaires.csv,superficie,,décimal,conditionnel,"> 0",m²,Surface en m².,"null possible",RM-04,signaler si null
+notaires.csv,nb_chambres,,entier,non,">= 0",,Nombre de chambres.,"0 pour terrains et locaux",RM-09,signaler si incohérent
+notaires.csv,statut,,catégorie,oui,"Vendu, Vente conclue, Acte signé",,Statut de l'acte.,"Casse variable (VENDU)",RM-10,normaliser
+import_historique.csv,ID,,texte,oui,"HIS-XXXX (4 chiffres)",,Identifiant local. Non universel.,"Peut être dupliqué",RM-01,conserver
+import_historique.csv,DateVente,,date,oui,ISO ou JJ/MM/AAAA,,Date de vente.,"Peut être ""hier"", null, ou date impossible",RM-05,quarantaine si impossible
+import_historique.csv,Region,,catégorie,oui,14 régions du référentiel,,Région.,"Casse variable; peut être vide",RM-07,normaliser ou signaler
+import_historique.csv,Ville,,catégorie,oui,Villes du référentiel,,Ville.,"Peut être vide (erreur de saisie)",RM-07,"signaler si vide, ne pas deviner"
+import_historique.csv,TypeBien,,catégorie,oui,7 types du référentiel,,Type de bien.,"Souvent en MAJUSCULES (TERRAIN)",RM-08,normaliser
+import_historique.csv,Prix,,décimal ou texte,oui,"> 0",FCFA,Prix de vente.,"""N/A""; espace comme séparateur (""37 965 000""); 0; négatif",RM-03,"normaliser si fiable, sinon quarantaine"
+import_historique.csv,Surface,,décimal ou texte,oui,"> 0",m²,Surface en m².,"Virgule décimale (""53,0""); ""quatre-vingt""; null",RM-04,"normaliser si fiable, sinon quarantaine"
+import_historique.csv,Chambres,,entier,non,">= 0",,Nombre de chambres.,"0 pour terrains et locaux",RM-09,signaler si incohérent
+import_historique.csv,SallesBain,,entier,non,">= 0",,Nombre de salles de bain.,"0 pour terrains et chambres",RM-09,signaler si incohérent

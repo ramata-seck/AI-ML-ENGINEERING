@@ -1,0 +1,7 @@
+﻿indicateur,valeur
+lignes_recues,640
+lignes_conservees,631
+lignes_quarantaine,9
+lignes_corrigees_conservees,295
+lignes_conservees_avec_avertissements,223
+lignes_sans_correction_ni_avertissement,256

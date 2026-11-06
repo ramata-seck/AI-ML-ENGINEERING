@@ -1,0 +1,11 @@
+﻿source,id_local,date,type_transaction,type_bien,region,ville,prix,surface,chambres,sdb,statut,periodicite,avertissements,corrections,motif_quarantaine,doublon
+import_historique,HIS-0072,2019-10-16,vente,Terrain,Ziguinchor,Bignona,,190.8,0,0,Vendu,,,,prix absent : 'nan',
+import_historique,HIS-0128,2018-05-16,vente,Terrain,Saint-Louis,Podor,,654.4,0,0,Vendu,,,"surface : '654,4' -> '654.4'",prix absent : 'nan',
+import_historique,HIS-0251,2018-03-27,vente,Studio,Thiès,Mbour,,43.7,1,3,Vendu,,,date : '27/03/2018' -> '2018-03-27',prix absent : 'nan',
+import_historique,HIS-0269,2018-09-21,vente,Appartement,Dakar,Keur Massar,,148.7,3,4,Vendu,,,,prix absent : 'nan',
+import_historique,HIS-0325,2019-04-17,vente,Appartement,Thiès,Thiès,,67.2,1,4,Vendu,,salles de bain > chambres + 2,type_bien : 'APPARTEMENT' -> 'Appartement',prix absent : 'nan',
+import_historique,HIS-0372,2018-08-20,vente,Studio,Saint-Louis,Saint-Louis,,40.1,6,4,Vendu,,,,prix absent : 'nan',
+import_historique,HIS-0423,2019-12-12,vente,Local commercial,Louga,Linguère,,121.9,0,1,Vendu,,,date : '12/12/2019' -> '2019-12-12'; type_bien : 'LOCAL COMMERCIAL' -> 'Local commercial',prix absent : 'nan',
+import_historique,HIS-0430,2019-09-02,vente,Local commercial,Kaolack,Kaolack,,106.9,0,3,Vendu,,salles de bain > chambres + 2,,prix absent : 'nan',
+import_historique,HIS-0478,2018-12-02,vente,Local commercial,Diourbel,Bambey,,52.3,0,2,Vendu,,date ambigu : '02/12/2018' lu '2018-12-02',"type_bien : 'LOCAL COMMERCIAL' -> 'Local commercial'; surface : '52,3' -> '52.3'",prix absent : 'nan',
+import_historique,HIS-0506,2018-07-22,vente,Maison,Matam,Ourossogui,,208.8,1,1,Vendu,,,,prix absent : 'nan',
