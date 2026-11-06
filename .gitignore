@@ -1,0 +1,19 @@
+# Environnements virtuels
+venv/
+.venv/
+env/
+
+# Secrets (ne jamais publier !)
+.env
+
+# Fichiers temporaires Python et Jupyter
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Système
+.DS_Store
+Thumbs.db
+
+# Gros fichiers de données (à adapter)
+*.zip
