@@ -1,0 +1,303 @@
+{
+  "date_execution": "2026-11-04 11:45:20",
+  "date_reference": "2026-11-04",
+  "versions": {
+    "python": "3.13.18",
+    "pandas": "3.0.5",
+    "numpy": "2.5.3"
+  },
+  "bilan_coherent": true,
+  "synthese_par_source": [
+    {
+      "source": "notaires",
+      "recues": 410,
+      "quarantaine": 20,
+      "doublons_exacts_ecartes": 0,
+      "propres": 390,
+      "corrigees": 126,
+      "avec_avertissement": 16,
+      "conformes": 253,
+      "taux_conformes_pct": 61.7
+    },
+    {
+      "source": "agence_teranga",
+      "recues": 640,
+      "quarantaine": 9,
+      "doublons_exacts_ecartes": 0,
+      "propres": 631,
+      "corrigees": 195,
+      "avec_avertissement": 223,
+      "conformes": 256,
+      "taux_conformes_pct": 40.0
+    },
+    {
+      "source": "plateforme_immo_sn",
+      "recues": 875,
+      "quarantaine": 16,
+      "doublons_exacts_ecartes": 14,
+      "propres": 845,
+      "corrigees": 97,
+      "avec_avertissement": 177,
+      "conformes": 609,
+      "taux_conformes_pct": 69.6
+    },
+    {
+      "source": "particuliers",
+      "recues": 731,
+      "quarantaine": 132,
+      "doublons_exacts_ecartes": 0,
+      "propres": 599,
+      "corrigees": 246,
+      "avec_avertissement": 325,
+      "conformes": 131,
+      "taux_conformes_pct": 17.9
+    },
+    {
+      "source": "import_historique",
+      "recues": 528,
+      "quarantaine": 10,
+      "doublons_exacts_ecartes": 0,
+      "propres": 518,
+      "corrigees": 386,
+      "avec_avertissement": 143,
+      "conformes": 87,
+      "taux_conformes_pct": 16.5
+    },
+    {
+      "source": "TOTAL",
+      "recues": 3184,
+      "quarantaine": 187,
+      "doublons_exacts_ecartes": 14,
+      "propres": 2983,
+      "corrigees": 1050,
+      "avec_avertissement": 884,
+      "conformes": 1336,
+      "taux_conformes_pct": 42.0
+    }
+  ],
+  "erreurs_et_corrections_par_champ": [
+    {
+      "champ": "date",
+      "absent": 0,
+      "invalide": 6,
+      "ambigu": 336,
+      "inconnu": 0,
+      "corrige": 623
+    },
+    {
+      "champ": "prix",
+      "absent": 85,
+      "invalide": 13,
+      "ambigu": 0,
+      "inconnu": 0,
+      "corrige": 137
+    },
+    {
+      "champ": "région",
+      "absent": 0,
+      "invalide": 0,
+      "ambigu": 0,
+      "inconnu": 0,
+      "corrige": 118
+    },
+    {
+      "champ": "statut",
+      "absent": 0,
+      "invalide": 0,
+      "ambigu": 0,
+      "inconnu": 153,
+      "corrige": 132
+    },
+    {
+      "champ": "surface",
+      "absent": 80,
+      "invalide": 4,
+      "ambigu": 0,
+      "inconnu": 0,
+      "corrige": 83
+    },
+    {
+      "champ": "type_bien",
+      "absent": 0,
+      "invalide": 0,
+      "ambigu": 0,
+      "inconnu": 0,
+      "corrige": 157
+    },
+    {
+      "champ": "ville",
+      "absent": 8,
+      "invalide": 0,
+      "ambigu": 0,
+      "inconnu": 0,
+      "corrige": 153
+    }
+  ],
+  "motifs_quarantaine": [
+    {
+      "motif": "prix absent",
+      "occurrences": 85
+    },
+    {
+      "motif": "surface absent",
+      "occurrences": 80
+    },
+    {
+      "motif": "prix invalide",
+      "occurrences": 13
+    },
+    {
+      "motif": "date invalide",
+      "occurrences": 6
+    },
+    {
+      "motif": "date future",
+      "occurrences": 5
+    },
+    {
+      "motif": "surface invalide",
+      "occurrences": 4
+    }
+  ],
+  "dates_ambigues_signalees": 336,
+  "doublons": {
+    "exacts_ecartes": 14,
+    "conflits_identifiant": 0,
+    "rapprochement": {
+      "groupes": 0,
+      "lignes_en_groupe": 0,
+      "par_statut": {},
+      "groupes_multi_sources": 0,
+      "config": {
+        "surface_tolerance_pct": 1.0,
+        "date_tolerance_jours": 7,
+        "prix_tolerance_pct": 2.0
+      }
+    },
+    "sensibilite": [
+      {
+        "tolerance_surface_pct": 0.0,
+        "tolerance_date_jours": 0,
+        "groupes": 0,
+        "lignes_concernees": 0,
+        "choix_par_defaut": false
+      },
+      {
+        "tolerance_surface_pct": 0.0,
+        "tolerance_date_jours": 7,
+        "groupes": 0,
+        "lignes_concernees": 0,
+        "choix_par_defaut": false
+      },
+      {
+        "tolerance_surface_pct": 0.0,
+        "tolerance_date_jours": 30,
+        "groupes": 0,
+        "lignes_concernees": 0,
+        "choix_par_defaut": false
+      },
+      {
+        "tolerance_surface_pct": 0.0,
+        "tolerance_date_jours": 90,
+        "groupes": 0,
+        "lignes_concernees": 0,
+        "choix_par_defaut": false
+      },
+      {
+        "tolerance_surface_pct": 1.0,
+        "tolerance_date_jours": 0,
+        "groupes": 0,
+        "lignes_concernees": 0,
+        "choix_par_defaut": false
+      },
+      {
+        "tolerance_surface_pct": 1.0,
+        "tolerance_date_jours": 7,
+        "groupes": 0,
+        "lignes_concernees": 0,
+        "choix_par_defaut": true
+      },
+      {
+        "tolerance_surface_pct": 1.0,
+        "tolerance_date_jours": 30,
+        "groupes": 7,
+        "lignes_concernees": 14,
+        "choix_par_defaut": false
+      },
+      {
+        "tolerance_surface_pct": 1.0,
+        "tolerance_date_jours": 90,
+        "groupes": 13,
+        "lignes_concernees": 26,
+        "choix_par_defaut": false
+      },
+      {
+        "tolerance_surface_pct": 5.0,
+        "tolerance_date_jours": 0,
+        "groupes": 0,
+        "lignes_concernees": 0,
+        "choix_par_defaut": false
+      },
+      {
+        "tolerance_surface_pct": 5.0,
+        "tolerance_date_jours": 7,
+        "groupes": 2,
+        "lignes_concernees": 4,
+        "choix_par_defaut": false
+      },
+      {
+        "tolerance_surface_pct": 5.0,
+        "tolerance_date_jours": 30,
+        "groupes": 22,
+        "lignes_concernees": 45,
+        "choix_par_defaut": false
+      },
+      {
+        "tolerance_surface_pct": 5.0,
+        "tolerance_date_jours": 90,
+        "groupes": 56,
+        "lignes_concernees": 118,
+        "choix_par_defaut": false
+      }
+    ]
+  },
+  "atypiques": {
+    "lignes": 352,
+    "par_classe": {
+      "aucune": 2631,
+      "a_verifier": 172,
+      "erreur_probable": 101,
+      "legitime_probable": 79
+    },
+    "config": {
+      "z_erreur": 5.0,
+      "z_legitime": 3.0,
+      "taille_min_groupe": 10,
+      "sigma_min": 0.1
+    }
+  },
+  "seuils": {
+    "surface_min": 5,
+    "surface_max": 2000,
+    "prix_min": 100000,
+    "prix_max": 2000000000,
+    "loyer_mensuel_min": 25000,
+    "loyer_mensuel_max": 5000000,
+    "chambres_max_petit_bien": 10,
+    "sdb_marge": 2
+  },
+  "limites": [
+    "Les seuils de plausibilité, de rapprochement et d'atypicité sont des **hypothèses pédagogiques**, pas des normes du marché (constantes `SEUILS`, `RAPPROCHEMENT` et `ATYPIQUES` dans `outils.py`).",
+    "Le rapprochement **signale des candidats**, il ne prouve pas que deux annonces désignent le même bien. Aucune fusion n'est faite. Le chaînage peut regrouper des biens distincts si les seuils sont trop larges (voir la sensibilité).",
+    "Les valeurs atypiques sont classées par **heuristique** (z-score du prix au m²). Sans au moins `taille_min_groupe` biens du même type, aucune référence n'existe et la valeur reste « à vérifier ».",
+    "`plateforme_immo_sn` : le nombre de **pièces** est utilisé comme nombre de chambres (les chambres peuvent être surestimées).",
+    "`agence_teranga` : pas de colonne de transaction, tout est traité comme une **vente** ; une feuille aux colonnes différentes n'est pas intégrée.",
+    "`import_historique` : traité comme un historique de **ventes** (`statut = Vendu`), d'après le nom de la colonne `DateVente`.",
+    "La **périodicité** des loyers n'est jamais devinée : sans mention explicite, le loyer n'est pas évalué (simple avertissement).",
+    "Les dates JJ/MM/AAAA dont le jour et le mois sont ≤ 12 sont lues selon la **convention JJ/MM/AAAA** du dictionnaire : signalées, non prouvées.",
+    "Les **coordonnées** du référentiel géographique sont identiques pour toutes les villes d'une région : elles ne servent pas à détecter des incohérences.",
+    "Une **devise** autre que FCFA est mise en quarantaine (aucun taux de change fourni).",
+    "Les nombres écrits en lettres ne sont reconnus que de 1 à 999 ; au-delà, la valeur est invalide.",
+    "La colonne `Commercial` de l'agence n'est pas reprise dans le schéma commun (elle reste dans `valeurs_brutes`)."
+  ]
+}

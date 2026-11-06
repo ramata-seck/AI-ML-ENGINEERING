@@ -1,0 +1,6 @@
+#!/home/rahma/Documents/ODC/ML__IA/MODULE_02/.venv/bin/python
+import sys
+from jupyter_events.cli import main
+if __name__ == '__main__':
+    sys.argv[0] = sys.argv[0].removesuffix('.exe')
+    sys.exit(main())

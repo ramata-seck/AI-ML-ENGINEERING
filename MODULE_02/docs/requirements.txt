@@ -1,0 +1,20 @@
+# Manipulation et analyse des données
+pandas
+numpy<2
+
+# Visualisation
+matplotlib
+seaborn
+
+# Machine Learning et prétraitement
+scikit-learn
+
+# Sauvegarde et chargement des modèles
+joblib
+
+# Environnement Notebook
+jupyter
+ipykernel
+
+
+
